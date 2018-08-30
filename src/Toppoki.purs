@@ -26,8 +26,28 @@ derive instance newtypeURL :: Newtype URL _
 newtype Selector = Selector String
 derive instance newtypeSelector :: Newtype Selector _
 
+type DefaultViewport = 
+  { width :: Number
+  , height :: Number
+  , deviceScaleFactor :: Number
+  , isMobile :: Boolean
+  , hasTouch :: Boolean
+  , isLandscape :: Boolean 
+  }
+
+defaultViewport :: DefaultViewport
+defaultViewport = 
+  { width : 800.0
+  , height : 600.0
+  , deviceScaleFactor : 1.0
+  , isMobile : false
+  , hasTouch : false
+  , isLandscape : false
+  }
+
 type LaunchOptions =
   ( headless :: Boolean
+  , defaultViewport :: DefaultViewport
   )
 
 launch
