@@ -46,8 +46,9 @@ defaultViewport =
   }
 
 type LaunchOptions =
-  ( headless :: Boolean
+  ( args :: Array String
   , defaultViewport :: DefaultViewport
+  , headless :: Boolean
   )
 
 launch
